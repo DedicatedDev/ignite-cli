@@ -28,7 +28,7 @@ func (f Faucet) TotalTransferredAmount(ctx context.Context, toAccountAddress, de
 	if err != nil {
 		return sdk.NewInt(0), err
 	}
-
+	totalAmount = sdk.NewInt(0)
 	for _, event := range events {
 		if event.Type == "transfer" {
 			for _, attr := range event.Attributes {
